@@ -188,5 +188,5 @@
   });
 
   // Abrir automáticamente tras 1s (opcional)
-  setTimeout(() => { container.classList.add("open"); }, 1000);
+
 })();
