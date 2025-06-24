@@ -158,6 +158,12 @@ h1 {
         border-radius: 10px;
         padding: 15px;
       }
+      .navbar-menu li a{
+    color: brown;
+  }
+  .menu ul{
+    background-color: #ffffff;
+  }
 
 
 .menu-con{
@@ -228,6 +234,10 @@ h1 {
       margin-bottom: 8px;
       letter-spacing: 0.5px;
       color: white;
+    }
+    a{
+      text-decoration: none;
+      
     }
 
     .header p {
@@ -445,7 +455,6 @@ h1 {
   border: 2px solid #fff;
   background: #24483A;
 }
-  
 
 .menu ul {
   list-style: none;
@@ -629,11 +638,15 @@ footer {
   color: gray;
   line-height: 1.0rem;
 }
+footer a {
+  color: #8c39da;
+  text-decoration: underline;
+}
 
 /*Preguntas*/
 
 .faq {
-  background-color: #fff;
+  background-color: #423e3e;
   border-radius: 16px;
   padding: 30px;
   margin: 40px auto;
