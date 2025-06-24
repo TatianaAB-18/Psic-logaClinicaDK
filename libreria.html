@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librería</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="menu">
+    <div class="menu-contenedor">
+        <div class="navbar-logo">Mente con Propósito</div>
+        <div class="menu-toggle">&#9776;</div>
+
+        <div id="menu-con" class="menu-con">
+        <ul class="navbar-menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre Mi</a></li>
+            <li><a href="especialidad.html">Especialidad</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="libreria.html">Librería</a></li>
+            <li><a href="ubicacion.html">Ubicación</a></li>
+            <li><a href="Buzon.html">Buzón de Sugerencias</a></li>
+
+        </ul>
+        </div>
+    </div>
+</div>
+
+<header class="encabezado">
+         <img src="imagenes/logo 2.png" alt="Logo Renacer Mental" class="logo">
+        <h1 class="titulo">Psicóloga Especializada</h1>
+        <p class="profesion">Dora Karina Bravo Velasco</p>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            .icono-instagram {
+        font-size: 1.8rem;
+        color: #880e4f;
+        border: 2px solid #880e4f;
+        border-radius: 50%;
+        padding: 10px;
+        transition: all 0.3s ease;
+        display: inline-block;
+  }
+
+         .icono-instagram:hover {
+        background-color: #f8bbd0;
+        color: white;
+        border-color: #f48fb1;
+  }
+        </style>
+        <a href="https://www.instagram.com/psi.cologaclinica?igsh=M2N6a2xlbDZzemgx" target="_blank">
+        <i class="fab fa-instagram icono-instagram"></i>
+        </a>
+</header>
+
+ <section>
+        <h2>Librería</h2>
+        <p>Libros especializados en temas vitales para tu vida</p>
+        <P>Deja tus opiniones en el Buzón de Sugerencias</P>
+    </section>
+
+    <section>
+        <h3>Libros Recomendados</h3>
+        <ul>
+            <li><strong>El poder del ahora</strong> - Eckhart Tolle</li>
+            <li><strong>Los secretos de la mente millonaria</strong> - T. Harv Eker</li>
+            <li><strong>Cómo hacer que te pasen cosas buenas</strong> - Marian Rojas</li>
+            <li><strong>Inteligencia emocional</strong> – Daniel Goleman</li>
+        </ul>
+    </section>
+
+    <section class="librería">
+        <h2>Descarga los libros Aquí!</h2>
+        <ul>
+            <li><a href="libros/Tolle-Eckhart-El-poder-del-ahora.pdf" download>El Poder del Ahora - Eckhart Tolle</a></li>
+            <li><a href="libros/Los secretos de la mente millonaria - T Harv Eker.pdf" download>Los Secretos de la Mente Millonaria - T. Harv Eker</a></li>
+            <li><a href="libros/COMO_HACER_QUE_TE_PASEN_COSAS_BUENAS.pdf" download>Como Hacer que te Pasen Cosas Buenas - Marian Rojas</a></li>
+            <li><a href="libros/INTELIGENCIA EMOCIONAL - DANIEL GOLEMAN.pdf" download>Inteligencia Emocional - Daniel Goleman</a></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Libros Generales</h2>
+        <ul>
+            <li><strong>Renacer Mental</strong> - Anónimo</li>
+            
+        </ul>
+    </section>
+
+    <section>
+        <h2>Descarga los libros Aquí!</h2>
+        <ul>
+            <li><a href="libros/RENACER MENTAL - Anonimo.pdf" download>Renacer Mental - Anónimo</a></li>
+        </ul>
+    </section>
+
+<script src="js/widget.js"></script>
+
+<br>
+<br>
+<br>
+
+<footer>
+         Desarrollado por:<br>
+  <a href="anaconabravomichelletatiana@gmail.com">Michelle Tatiana Anacona Bravo</a></p> 
+  <div> <p class="footer-text">Diseñado con 💜 para el bienestar mental</p></div>
+  <div><p>&copy; 2025 Psicóloga Clínica - Todos los derechos reservados.</p></div>
+    </footer>
+
+    <script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu-con');
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>
