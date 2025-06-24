@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buzón de Sugerencias</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser/dist/email.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+    
+  <div class="menu">
+    <div class="menu-contenedor">
+        <div class="navbar-logo">Mente con Propósito</div>
+        <div class="menu-toggle">&#9776;</div>
+        <div id="menu-con" class="menu-con">
+        <ul class="navbar-menu">
+            
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre Mi</a></li>
+            <li><a href="especialidad.html">Especialidad</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="libreria.html">Librería</a></li>
+            <li><a href="ubicacion.html">Ubicación</a></li>
+            <li><a href="Buzon.html">Buzón de Sugerencias</a></li>
+
+        </ul>
+        </div>
+    </div>
+</div>
+
+<header class="encabezado">
+         <img src="imagenes/logo 2.png" alt="Logo Renacer Mental" class="logo">
+        <h1 class="titulo">Psicóloga Especializada</h1>
+        <p class="profesion">Dora Karina Bravo Velasco</p>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            .icono-instagram {
+        font-size: 1.8rem;
+        color: #880e4f;
+        border: 2px solid #880e4f;
+        border-radius: 50%;
+        padding: 10px;
+        transition: all 0.3s ease;
+        display: inline-block;
+  }
+
+         .icono-instagram:hover {
+        background-color: #f8bbd0;
+        color: white;
+        border-color: #f48fb1;
+  }
+        </style>
+        <a href="https://www.instagram.com/psi.cologaclinica?igsh=M2N6a2xlbDZzemgx" target="_blank">
+        <i class="fab fa-instagram icono-instagram"></i>
+        </a>
+</header>
+    
+
+  <div class="container" id="sugerencias">
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+    </div>
+
+    <div class="header">
+      <i class="fas fa-lightbulb"></i>
+      <h1>Envía tu Sugerencia</h1>
+      <p>Comparte tus ideas para mejorar nuestro servicio</p>
+    </div>
+
+    <div class="form-container">
+      <form id="suggestionForm">
+        <div class="form-group">
+          <label for="name">Tu nombre (opcional):</label>
+          <input type="text" id="name" class="form-control" placeholder="¿Cómo te llamas?" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Tu correo (opcional):</label>
+          <input type="email" id="email" class="form-control" placeholder="ejemplo@email.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="suggestion">Tu sugerencia:*</label>
+          <textarea id="suggestion" class="form-control" placeholder="Describe tu sugerencia aquí..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn">
+          <i class="fas fa-paper-plane"></i> Enviar Sugerencia
+        </button>
+      </form>
+    </div>
+
+    <div class="contact-info" id="contacto">
+      <p>Tu sugerencia será enviada directamente a:
+        <a href="mailto:dokabra@hotmail.com">dokabra@hotmail.com</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="notification" id="notification">
+    <i class="fas fa-check-circle"></i>
+    <span>¡Sugerencia enviada con éxito!</span>
+  </div>
+
+  <script>
+   const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu-con');
+
+menuToggle.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
+
+    // Inicializar EmailJS
+    (function () {
+      emailjs.init("G4Wblkz5pvb6_BSOW");
+    })();
+
+    document.getElementById('suggestionForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const loading = document.getElementById('loading');
+      loading.classList.add('active');
+
+      const name = document.getElementById('name').value || 'Anónimo';
+      const email = document.getElementById('email').value || 'No especificado';
+      const suggestion = document.getElementById('suggestion').value;
+
+      emailjs.send('service_t3869ly', 'template_6slugfm', {
+        nombre: name,
+        correo: email,
+        sugerencia: suggestion
+      }).then(function () {
+        loading.classList.remove('active');
+        const notification = document.getElementById('notification');
+        notification.innerHTML = '<i class="fas fa-check-circle"></i><span>¡Sugerencia enviada con éxito!</span>';
+        notification.classList.remove('error');
+        notification.classList.add('show');
+        document.getElementById('suggestionForm').reset();
+        setTimeout(() => {
+          notification.classList.remove('show');
+        }, 4000);
+      }, function (error) {
+        loading.classList.remove('active');
+        const notification = document.getElementById('notification');
+        notification.innerHTML = `<i class="fas fa-exclamation-circle"></i><span>Error: ${error.text || 'Inténtalo de nuevo más tarde'}</span>`;
+        notification.classList.add('error', 'show');
+        setTimeout(() => {
+          notification.classList.remove('show');
+        }, 6000);
+      });
+    });
+ 
+  </script>
+
+  <br>
+  <br>
+  <br>
+  
+    <footer>
+         Desarrollado por:<br>
+  <a href="anaconabravomichelletatiana@gmail.com">Michelle Tatiana Anacona Bravo</a></p> 
+  <div> <p class="footer-text">Diseñado con 💜 para el bienestar mental</p></div>
+  <div><p>&copy; 2025 Psicóloga Clínica - Todos los derechos reservados.</p></div>
+    </footer>
+
+</body>
+</html>
